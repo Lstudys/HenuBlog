@@ -1,9 +1,19 @@
+<!--
+*  @FileDescription: 默认布局页面
+*  @Author: 李永晖
+*  @CreatedDate:2021/11/15
+*  @LastEditors: 李永晖
+*  @LastEditTime: 2021/11/17
+-->
+
 <template>
     <div>
         <div class="header">
             <Header/>
         </div>
-        <Nuxt/>
+        <div class="my-main">
+            <Nuxt/>
+        </div>
         <div class="footer">
             <Footer/>
         </div>
@@ -21,6 +31,10 @@ export default {
 }
 </script>
 
-<style>
-   
+<style scope>
+.my-main{
+    padding-top: 90px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
 </style>
