@@ -20,6 +20,7 @@ export default {
   css: [
     'element-ui/lib/theme-chalk/index.css',
     '~/asserts/theme/index.css',
+    '~/asserts/css/global.css',
     'element-ui/lib/theme-chalk/display.css'
   ],
 
@@ -38,7 +39,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+  proxy: {
+    '/api/': 'http://api.example.com',
+    '/api2/': 'http://api.another-website.com'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
