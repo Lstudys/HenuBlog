@@ -19,6 +19,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'element-ui/lib/theme-chalk/index.css',
+    '~/asserts/theme/index.css',
     'element-ui/lib/theme-chalk/display.css'
   ],
 
