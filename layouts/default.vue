@@ -1,28 +1,36 @@
 <template>
     <div>
         <div class="header">
-            <ul>
-                <li><a href="#">首页</a></li>
-                <li><a href="#">文章</a></li>
-                <li><a href="#">问答</a></li>
-                <li><a href="#">个人中心</a></li>
-            </ul>
+            <Header/>
         </div>
         <Nuxt/>
-        <div class="footer">footer</div>
+        <div class="footer">
+            <Footer/>
+        </div>
     </div>
 </template>
+
+<script>
+import Header from '../components/layout/Header.vue';
+import Footer from '../components/layout/Footer.vue';
+export default {
+    components:{
+        Header,
+        Footer
+    }
+}
+</script>
 
 <style>
     *{
         margin: 0 auto;
         font-size: 18px;
     }
-    .header{
+    /* .header{
         width: 100%;
         height: 50px;
         background-color: black;
-    }
+    } */
     .header ul{
         margin-left: 80px;
     }
