@@ -14,7 +14,7 @@
                 <a ref="nofollow" href="#">关于</a><span></span>
                 <a ref="nofollow" href="#">反馈</a>
                 <a ref="nofollow" href="">联系我</a>
-                <a ref="nofollow" href="https://github.com/Lstudys">我的GitHub</a>
+                <a ref="nofollow" target="_blank" href="https://github.com/Lstudys">我的GitHub</a>
             </div>
         </div>
     </div>
