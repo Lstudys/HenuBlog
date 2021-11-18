@@ -10,25 +10,24 @@
     <div class="my-header header-fixed">
         <div class="my-nav">
             <el-row type="flex" justify="end" align="center">
-                <el-col :span="4">
-                    <nuxt-link to="/"><img src="@/asserts/images/logo.png" alt="" height="40px"></nuxt-link>
+                <el-col :span="4" class="my-logo">
+                    <nuxt-link to="/"><img src="@/asserts/images/logo.png" alt="" height="50px"></nuxt-link>
                 </el-col>
-                <el-col :span="10" class="hidden-xs-only">
+                <el-col :span="10" class="hidden-sm-and-down">
                     <el-menu default-active="/" 
                     mode="horizontal" 
                     active-text-color="#EF6520"
-                    router="true"
-                    @select="handleSelect">
+                    router>
                         <el-menu-item index="/">首页</el-menu-item>
                         <el-menu-item index="/question">问答</el-menu-item>
-                        <el-menu-item index="/label"><a href="https://www.ele.me" target="_blank">标签</a></el-menu-item>
+                        <el-menu-item index="/label">标签</el-menu-item>
                     </el-menu>
                 </el-col>
-                <el-col :span="8" xs="12">
-                    <div class="my-login">
+                <el-col class="my-login" :span="8" xs="12">
+                    <div class="my-login-inner">
                         <el-button type="text" >后台管理</el-button>
                         <el-button type="text">登录</el-button>
-                        <el-button type="primary" round="true">注册</el-button>
+                        <el-button type="primary" round>注册</el-button>
                         <el-dropdown>
                             <div class="el-dropdown-link">
                                  <el-avatar icon="el-icon-user-solid"></el-avatar>
@@ -76,9 +75,33 @@ export default {
 }
 
 .my-nav{
-    margin: 0 auto;
-
+    max-width: 1140px;
 }
 
- 
+.my-logo{
+    line-height: 60px;
+    margin-top: 6px;
+    padding-left: 50px;
+}
+
+.my-login{
+    text-align: right;
+}
+
+.my-login-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    margin-left: 60px;
+}
+
+.el-dropdown-link{
+
+margin: 10px 10px;
+}
+
+div:focus{
+    outline: none;
+}
 </style>
