@@ -14,7 +14,7 @@
                     <nuxt-link to="/"><img src="@/asserts/images/logo.png" alt="" height="50px"></nuxt-link>
                 </el-col>
                 <el-col :span="10" class="hidden-sm-and-down">
-                    <el-menu default-active="/" 
+                    <el-menu :default-active="defaultActive" 
                     mode="horizontal" 
                     active-text-color="#EF6520"
                     router>
@@ -50,7 +50,12 @@
 export default {
     name:'Header',
     mounted() {
-        console.log('Header组件');
+        // this.defaultActive = this.$route.path;
+    },
+    data(){
+        return {
+            defaultActive: `${this.$route.path}`,// 默认导航路径
+        }
     },
     methods:{
         handleCommand(command){
