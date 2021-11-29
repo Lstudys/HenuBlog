@@ -45,7 +45,7 @@ export default {
     proxy: true // Can be also an object with default options
   },
   proxy: {
-    '/api/': 'http://api.example.com',
+    '/api/': 'https://mock.mengxuegu.com/mock/61925633f126df7bfd5b7a1a',
     '/api2/': 'http://api.another-website.com'
   },
 
