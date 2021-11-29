@@ -26,7 +26,7 @@
                 <el-col class="my-login" :span="8" xs="12">
                     <div class="my-login-inner">
                         <el-button type="text" >后台管理</el-button>
-                        <el-button type="text">登录</el-button>
+                        <el-button type="text" @click="$store.dispatch('login')">登录</el-button>
                         <el-button type="primary" round>注册</el-button>
                         <el-dropdown>
                             <div class="el-dropdown-link">
