@@ -12,10 +12,20 @@ const state = () =>({
 
 
 const mutations = {
+
+    // 重置用户信息和令牌
     RESET_STATE(state){
         state.userInfo = null;
         state.accessToken = null;
         state.refreshToken = null;
+    },
+
+    // 设置用户信息和令牌
+    UPDATE_STATE(state,data){
+        state.userInfo = data.userInfo;
+        state.accessToken = data.accessToken;
+        state.refreshToken = data.refreshToken;
+        console.log(JSON.stringify(state.userInfo));
     }
 }
 
@@ -25,6 +35,15 @@ const actions = {
     login({commit}){
         commit('RESET_STATE');
         window.location.href = `http://localhost:8080/#/login?redirecturl=${window.location.href}`;
+    },
+
+    nuxtServerInit({commit},{app}){
+        // console.log(app.$cookies.get('userInfo'));
+        const data = {};
+        data.userInfo = app.$cookies.get('userInfo');
+        data.accessToken = app.$cookies.get('accessToken');
+        data.refreshToken = app.$cookies.get('refreshToken');
+        commit('UPDATE_STATE',data);
     }
 }
 

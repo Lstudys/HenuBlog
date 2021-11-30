@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/17
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/11/18
+*  @LastEditTime: 2021/11/30
 -->
 
 <template>
@@ -26,17 +26,17 @@
                 <el-col class="my-login" :span="8" xs="12">
                     <div class="my-login-inner">
                         <el-button type="text" >后台管理</el-button>
-                        <el-button type="text" @click="$store.dispatch('login')">登录</el-button>
-                        <el-button type="primary" round>注册</el-button>
+                        <el-button v-if="!ifLogin" type="text" @click="$store.dispatch('login')">登录</el-button>
+                        <el-button v-if="!ifLogin" type="primary" round>注册</el-button>
                         <el-dropdown>
                             <div class="el-dropdown-link">
-                                 <el-avatar icon="el-icon-user-solid"></el-avatar>
+                                 <el-avatar icon="el-icon-user-solid" :src="ifLogin ? userInfo.imageUrl:null"></el-avatar>
                             </div>
                             <el-dropdown-menu slot="dropdown"  @command="handleCommand">
                                 <el-dropdown-item command="artical">写文章</el-dropdown-item>
                                 <el-dropdown-item command="question">提问题</el-dropdown-item>
                                 <el-dropdown-item command="user">我的主页</el-dropdown-item>
-                                <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+                                <el-dropdown-item v-if="ifLogin" command="logout">退出登录</el-dropdown-item>
                             </el-dropdown-menu>
                         </el-dropdown>
                     </div>
@@ -55,6 +55,12 @@ export default {
     data(){
         return {
             defaultActive: `${this.$route.path}`,// 默认导航路径
+            userInfo:this.$store.state.userInfo
+        }
+    },
+    computed:{
+        ifLogin(){
+            return this.$store.state.userInfo;
         }
     },
     methods:{
