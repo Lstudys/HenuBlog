@@ -55,7 +55,8 @@ export default {
     data(){
         return {
             defaultActive: `${this.$route.path}`,// 默认导航路径
-            userInfo:this.$store.state.userInfo
+            userInfo:this.$store.state.userInfo,
+            imageUrl:'@/asserts/images/userImage.jpg'
         }
     },
     computed:{

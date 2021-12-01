@@ -25,7 +25,6 @@ const mutations = {
         state.userInfo = data.userInfo;
         state.accessToken = data.accessToken;
         state.refreshToken = data.refreshToken;
-        console.log(JSON.stringify(state.userInfo));
     }
 }
 
@@ -43,6 +42,7 @@ const actions = {
         data.userInfo = app.$cookies.get('userInfo');
         data.accessToken = app.$cookies.get('accessToken');
         data.refreshToken = app.$cookies.get('refreshToken');
+        console.log('data',{...data.userInfo})
         commit('UPDATE_STATE',data);
     }
 }
