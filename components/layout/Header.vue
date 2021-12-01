@@ -66,7 +66,9 @@ export default {
     },
     methods:{
         handleCommand(command){
-            this.$message(command);
+            if(!this.ifLogin){
+               return this.$store.dispatch('login');
+            }
         }
     }
 }

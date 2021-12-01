@@ -37,12 +37,10 @@ const actions = {
     },
 
     nuxtServerInit({commit},{app}){
-        // console.log(app.$cookies.get('userInfo'));
         const data = {};
         data.userInfo = app.$cookies.get('userInfo');
         data.accessToken = app.$cookies.get('accessToken');
         data.refreshToken = app.$cookies.get('refreshToken');
-        console.log('data',{...data.userInfo})
         commit('UPDATE_STATE',data);
     }
 }
