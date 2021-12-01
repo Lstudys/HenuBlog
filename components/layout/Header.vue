@@ -28,11 +28,11 @@
                         <el-button type="text" >后台管理</el-button>
                         <el-button v-if="!ifLogin" type="text" @click="$store.dispatch('login')">登录</el-button>
                         <el-button v-if="!ifLogin" type="primary" round>注册</el-button>
-                        <el-dropdown>
+                        <el-dropdown @command="handleCommand">
                             <div class="el-dropdown-link">
                                  <el-avatar icon="el-icon-user-solid" :src="ifLogin ? userInfo.imageUrl:null"></el-avatar>
                             </div>
-                            <el-dropdown-menu slot="dropdown"  @command="handleCommand">
+                            <el-dropdown-menu slot="dropdown"  >
                                 <el-dropdown-item command="artical">写文章</el-dropdown-item>
                                 <el-dropdown-item command="question">提问题</el-dropdown-item>
                                 <el-dropdown-item command="user">我的主页</el-dropdown-item>
@@ -67,8 +67,9 @@ export default {
     methods:{
         handleCommand(command){
             if(!this.ifLogin){
-               return this.$store.dispatch('login');
+                this.$store.dispatch('login');
             }
+            this.$message(command);
         }
     }
 }
