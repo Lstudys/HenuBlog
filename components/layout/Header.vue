@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/17
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/11/30
+*  @LastEditTime: 2021/12/01
 -->
 
 <template>
@@ -67,9 +67,23 @@ export default {
     methods:{
         handleCommand(command){
             if(!this.ifLogin){
-                this.$store.dispatch('login');
+               return this.$store.dispatch('login');
             }
-            this.$message(command);
+            switch(command){
+                case 'artical':
+                    let articalRoute = this.$router.resolve('/artical/edit');
+                    window.open(articalRoute.href,'_blank');
+                    break;
+                case 'question': 
+                    let questionRoute = this.$router.resolve('/question');
+                    window.open(questionRoute.href,'_blank');
+                    break;
+                case 'user':
+                    let userRoute = this.$router.resolve('/user');
+                    window.open(userRoute.href,'_blank');
+                    break;
+                default:break;
+            }
         }
     }
 }
