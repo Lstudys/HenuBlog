@@ -13,6 +13,7 @@
         </div>
         <div class="my-main">
             <Nuxt/>
+            <!-- 回到顶部按钮 -->
             <el-backtop><di class="my-back-btn">up</di></el-backtop>
         </div>
         <div class="footer">
