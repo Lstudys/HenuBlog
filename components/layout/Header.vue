@@ -27,7 +27,7 @@
                     <div class="my-login-inner">
                         <el-button type="text" >后台管理</el-button>
                         <el-button v-if="!ifLogin" type="text" @click="$store.dispatch('login')">登录</el-button>
-                        <el-button v-if="!ifLogin" type="primary" round>注册</el-button>
+                        <el-button v-if="!ifLogin" type="primary" round @click="register">注册</el-button>
                         <el-dropdown @command="handleCommand">
                             <div class="el-dropdown-link">
                                  <el-avatar icon="el-icon-user-solid" :src="ifLogin ? userInfo.imageUrl:null"></el-avatar>
@@ -84,6 +84,10 @@ export default {
                     break;
                 default:break;
             }
+        },
+
+        register(){
+            window.location.href='http://localhost:8080/#/register';
         }
     }
 }

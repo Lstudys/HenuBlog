@@ -42,7 +42,7 @@ const actions = {
         data.accessToken = app.$cookies.get('accessToken');
         data.refreshToken = app.$cookies.get('refreshToken');
         commit('UPDATE_STATE',data);
-    }
+    },
 }
 
 export default{
