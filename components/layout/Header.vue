@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/17
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/01
+*  @LastEditTime: 2021/12/03
 -->
 
 <template>
@@ -36,7 +36,7 @@
                                 <el-dropdown-item command="artical">写文章</el-dropdown-item>
                                 <el-dropdown-item command="question">提问题</el-dropdown-item>
                                 <el-dropdown-item command="user">我的主页</el-dropdown-item>
-                                <el-dropdown-item v-if="ifLogin" command="logout">退出登录</el-dropdown-item>
+                                <el-dropdown-item v-if="ifLogin" command="logout" >退出登录</el-dropdown-item>
                             </el-dropdown-menu>
                         </el-dropdown>
                     </div>
@@ -81,6 +81,9 @@ export default {
                 case 'user':
                     let userRoute = this.$router.resolve('/user');
                     window.open(userRoute.href,'_blank');
+                    break;
+                case 'logout':
+                    this.$store.dispatch('loginOut');
                     break;
                 default:break;
             }

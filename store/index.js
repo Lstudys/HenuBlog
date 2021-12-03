@@ -43,6 +43,11 @@ const actions = {
         data.refreshToken = app.$cookies.get('refreshToken');
         commit('UPDATE_STATE',data);
     },
+
+    loginOut({commit}){
+        commit('RESET_STATE');
+        window.location.href = `http://localhost:8080/#/loginout?redirecturl=${window.location.href}`
+    }
 }
 
 export default{
