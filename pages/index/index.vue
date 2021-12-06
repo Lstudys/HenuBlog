@@ -13,15 +13,27 @@
       <el-col :span="5" class="hidden-sm-and-down">
         <LeftNav></LeftNav>
       </el-col>
+      <el-col :span="16">
+        <Carousel></Carousel>
+        <router-view></router-view>
+      </el-col>
+      <el-col :span="3">
+        <Card></Card>
+      </el-col>
     </el-row>
 </div>
 </template>
 
 <script>
-import LeftNav from '../components/page/LeftNav.vue';
+import LeftNav from '../../components/page/LeftNav.vue';
+import Carousel from '../../components/page/carousel.vue';
+import Card from '../../components/page/Card.vue';
+
 export default {
   components:{
-    LeftNav
+    LeftNav,
+    Carousel,
+    Card
   }
 }
 </script>

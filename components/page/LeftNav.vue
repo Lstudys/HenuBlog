@@ -11,7 +11,7 @@
     <div>
         <el-divider>左侧导航</el-divider>
       <el-menu
-      :default-active="$route.path"
+      default-active="/index"
       router
       class="el-menu-vertical-demo"
       @open="handleOpen"
