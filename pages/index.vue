@@ -25,16 +25,19 @@
 </template>
 
 <script>
-import LeftNav from '../../components/page/LeftNav.vue';
-import Carousel from '../../components/page/carousel.vue';
-import Card from '../../components/page/Card.vue';
+import LeftNav from '../components/page/LeftNav.vue';
+import Carousel from '../components/page/carousel.vue';
+import Card from '../components/page/Card.vue';
 
 export default {
   components:{
     LeftNav,
     Carousel,
     Card
-  }
+  },
+  mounted() {
+    console.log(this.$route.path);
+  },
 }
 </script>
 
