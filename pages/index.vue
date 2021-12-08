@@ -15,7 +15,9 @@
       </el-col>
       <el-col :span="16">
         <Carousel></Carousel>
-        <router-view></router-view>
+        <!-- <router-view></router-view> -->
+        <!-- 两个显示子路由的标签都能用 -->
+        <nuxt-child></nuxt-child>
       </el-col>
       <el-col :span="3">
         <Card></Card>

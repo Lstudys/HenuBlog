@@ -11,12 +11,12 @@
     <div>
         <el-divider>左侧导航</el-divider>
       <el-menu
-      default-active="/"
+      :default-active="defaultPath"
       router
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <el-menu-item index="/">
+      <el-menu-item index="/index">
        <span>推荐</span>
       </el-menu-item>
       <el-menu-item index="/technology">
@@ -38,6 +38,11 @@
 
 <script>
 export default {
-    name:'LeftNav'
+    name:'LeftNav',
+    data(){
+      return {
+        defaultPath:this.$route.path
+      }
+    }
 }
 </script>

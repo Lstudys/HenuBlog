@@ -48,7 +48,6 @@ export default {
   },
   proxy: {
     '/api/': 'https://mock.mengxuegu.com/mock/61925633f126df7bfd5b7a1a',
-    '/api2/': 'http://api.another-website.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
