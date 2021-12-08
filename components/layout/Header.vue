@@ -30,7 +30,7 @@
                         <el-button v-if="!ifLogin" type="primary" round @click="register">注册</el-button>
                         <el-dropdown @command="handleCommand">
                             <div class="el-dropdown-link">
-                                 <el-avatar icon="el-icon-user-solid" :src="ifLogin ? userInfo.imageUrl:null"></el-avatar>
+                                 <el-avatar icon="el-icon-user-solid" :src="ifLogin ? imageUrl:null"></el-avatar>
                             </div>
                             <el-dropdown-menu slot="dropdown"  >
                                 <el-dropdown-item command="artical">写文章</el-dropdown-item>
@@ -56,7 +56,7 @@ export default {
         return {
             defaultActive: `${this.$route.path}`,// 默认导航路径
             userInfo:this.$store.state.userInfo,
-            imageUrl:'@/asserts/images/userImage.jpg'
+            imageUrl:require("../../asserts/images/userImage.jpg")
         }
     },
     computed:{
