@@ -16,7 +16,7 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <el-menu-item index="/index">
+      <el-menu-item index="/">
        <span>推荐</span>
       </el-menu-item>
       <el-menu-item index="/technology">
