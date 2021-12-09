@@ -3,13 +3,13 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/03
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/03
+*  @LastEditTime: 2021/12/09
 -->
 
 
 <template>
     <div>
-        <el-divider>左侧导航</el-divider>
+        <el-divider>分类</el-divider>
       <el-menu
       :default-active="defaultPath"
       router
@@ -46,3 +46,9 @@ export default {
     }
 }
 </script>
+
+<style scope>
+span{
+  font-weight: bold;
+}
+</style>

@@ -24,6 +24,12 @@
                 </div>
             </li>
         </ul>
+        <div class="noNews" v-show="ifHaveNews">
+            <el-divider>没有更多了</el-divider>
+        </div>
+        <div class="btn">
+            <el-button type="primary" :loading="isLoading" @click="loadNews">{{isLoading ? '加载中' : '点击加载'}}</el-button>
+        </div>
     </div>
 </template>
 
@@ -32,13 +38,29 @@ export default {
     name:'List',
     data(){
         return {
-            articles:[]
+            articles:[],
+            isLoading:false,
+            ifHaveNews:false
         }
     },
     async created(){
         const {data} = await this.$axios.get('https://mock.mengxuegu.com/mock/61925633f126df7bfd5b7a1a/articleList');
         const {records} = data.data;
         this.articles = records;
+    },
+    methods:{
+        async loadNews(){
+            this.isLoading = true;
+            if(this.articles.length <= 100){
+                const {data} = await this.$axios.get('https://mock.mengxuegu.com/mock/61925633f126df7bfd5b7a1a/articleList');
+                const {records} = data.data;
+                this.articles = this.articles.concat(records);
+            }
+            else{
+                this.ifHaveNews = true;
+            }
+            this.isLoading = false;
+        }
     }
 }
 </script>
@@ -78,5 +100,18 @@ li{
 .acticleInfo i:nth-child(1):hover{
     color: #EF6520;
     cursor: pointer;
+}
+
+.btn{
+    text-align: center;
+}
+
+.el-button{
+    border-radius: 20px;
+}
+
+.noNews{
+    text-align: center;
+    color: #ccc;
 }
 </style>

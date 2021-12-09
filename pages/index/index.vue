@@ -7,7 +7,9 @@
 -->
 
 <template>
-    <List></List>
+    <div class="wrap">
+        <List></List>
+    </div>
 </template>
 
 <script>
@@ -18,6 +20,13 @@ export default {
     },
     created(){
         console.log('index创建');
+    },
+    methods:{
+     
     }
 }
 </script>
+
+<style scope>
+
+</style>

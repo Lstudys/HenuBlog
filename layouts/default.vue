@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/15
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/11/17
+*  @LastEditTime: 2021/12/09
 -->
 
 <template>
@@ -14,7 +14,7 @@
         <div class="my-main">
             <Nuxt/>
             <!-- 回到顶部按钮 -->
-            <el-backtop><di class="my-back-btn">up</di></el-backtop>
+            <el-backtop><di class="my-back-btn"><i class="el-icon-top"></i></di></el-backtop>
         </div>
         <div class="footer">
             <Footer/>
