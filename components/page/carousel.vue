@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/06
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/06
+*  @LastEditTime: 2021/12/09
 -->
 
 
@@ -11,7 +11,7 @@
     <div class="block">
           <el-carousel trigger="click" height="250px">
             <el-carousel-item v-for="item in 4" :key="item">
-              <h3 h3 class="small">{{ item }}</h3>
+              <img src="../../asserts/images/userImage.jpg" alt="">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style scope>
   .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
@@ -38,5 +38,10 @@ export default {
   
   .el-carousel__item:nth-child(2n+1) {
      background-color: #d3dce6;
+  }
+
+  .el-carousel__item img{
+    height: 250px;
+    width: 100%;
   }
 </style>

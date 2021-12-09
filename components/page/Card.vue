@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/06
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/06
+*  @LastEditTime: 2021/12/09
 -->
 
 <template>
@@ -11,7 +11,7 @@
         <div class="block">
           <el-carousel trigger="click" height="200px">
             <el-carousel-item v-for="item in 4" :key="item">
-              <h3 h3 class="small">{{ item }}</h3>
+              
             </el-carousel-item>
           </el-carousel>
         </div>
