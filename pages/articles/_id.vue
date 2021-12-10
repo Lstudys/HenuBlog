@@ -13,12 +13,12 @@
                 <div class="article">
                     <el-card>
                         <div class="header">
-                            <p class="title">今天天气晴，上了一上午课</p>
+                            <p class="title">{{title}}</p>
                             <div class="articleInfo">
-                                <nuxt-link to="/" target="_blank"><i class="el-icon-user-solid">李永晖</i></nuxt-link>
-                                <i class="el-icon-date">一天前</i>
-                                <i class="el-icon-thumb">520</i>
-                                <i class="el-icon-view">520</i>
+                                <nuxt-link to="/" target="_blank"><i class="el-icon-user-solid">{{author}}</i></nuxt-link>
+                                <i class="el-icon-date">{{lastEditTime}}</i>
+                                <i class="el-icon-thumb">{{thumbNumber}}</i>
+                                <i class="el-icon-view">{{viewCount}}</i>
                             </div>
                             <div class="tag">
                                 <el-tag size="small">学习</el-tag>
@@ -26,10 +26,9 @@
                             </div>
                         </div>
                         <div class="article-content">
-                            <div class="markdown">
-                                啊哈哈哈哈哈哈哈哈哈
-                            </div>
-                            <el-button type="primary" class="btn" icon="el-icon-thumb">点赞</el-button>
+                            <div class="markdown">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{content}}</div>
+                            <!-- <el-button type="primary" class="btn" >点赞</el-button> -->
+                            <div class="thumbUp"><i class="el-icon-thumb"></i></div>
                         </div>
                     </el-card>
                 </div>
@@ -47,6 +46,31 @@
         </el-row>
     </div>
 </template>
+
+<script>
+export default {
+    data(){
+        return {
+            title:'',
+            author:'',
+            thumbNumber:0,
+            viewCount:0,
+            content:'',
+            lastEditTime:''
+        }
+    },
+    async created(){
+        const {data} = await this.$axios.get('https://mock.mengxuegu.com/mock/61925633f126df7bfd5b7a1a/articleInfo');
+        const datas = data.data;
+        this.title = datas.title;
+        this.author = datas.nickName;
+        this.thumbNumber = datas.thumUp;
+        this.viewCount = datas.viewCount;
+        this.content = datas.summary;
+        this.lastEditTime = datas.updataTime;
+    }
+}
+</script>
 
 <style scope>
 .el-card{
@@ -79,7 +103,33 @@
     color: #EF6520;
 }
 
+.articleInfo i:nth-child(1):hover{
+    cursor: pointer;
+}
+
 .article-content .btn{
     border-radius: 5px;
+}
+
+.header .tag{
+    margin-bottom: 15px;
+}
+
+.thumbUp{
+    font-size: 30px;
+    color: #EF6520;
+    margin-top: 20px;
+}
+
+.thumbUp:hover{
+    cursor: pointer;
+}
+
+.markdown{
+    font-size: 16px;
+    color: #4D4D4D;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
 }
 </style>

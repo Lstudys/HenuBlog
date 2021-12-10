@@ -40,8 +40,7 @@ export default {
         return {
             articles:[],
             isLoading:false,
-            ifHaveNews:false,
-            // articleRoute:`/articles/${article.id}`
+            ifHaveNews:false
         }
     },
     async created(){
