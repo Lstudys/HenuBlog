@@ -3,11 +3,11 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/06
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/09
+*  @LastEditTime: 2021/12/10
 -->
 
 <template>
-     <el-card shadow="hover">
+     <el-card shadow="hover" style="width:180px">
         <div class="block">
           <el-carousel trigger="click" height="200px">
             <el-carousel-item v-for="item in 4" :key="item">
