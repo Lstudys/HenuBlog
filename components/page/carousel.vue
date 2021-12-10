@@ -10,8 +10,8 @@
 <template>
     <div class="block">
           <el-carousel trigger="click" height="250px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <img src="../../asserts/images/userImage.jpg" alt="">
+            <el-carousel-item v-for="item in images" :key="item">
+              <img :src="item" alt="">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -19,7 +19,17 @@
 
 <script>
 export default {
-    name:'Carousel'
+    name:'Carousel',
+    data(){
+      return {
+        images:[
+          require("../../asserts/images/userImage.jpg"),
+          require("../../asserts/images/fanzhendong.jpg"),
+          require("../../asserts/images/xuxin.jgp.jpeg"),
+          require("../../asserts/images/xuxin2.jpg")
+        ]
+      }
+    }
 }
 </script>
 
