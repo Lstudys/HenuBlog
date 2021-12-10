@@ -10,8 +10,8 @@
      <el-card shadow="hover" style="width:180px">
         <div class="block">
           <el-carousel trigger="click" height="200px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              
+            <el-carousel-item v-for="item in images" :key="item">
+              <img :src="item" alt="">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -21,7 +21,17 @@
 
 <script>
 export default {
-    name:'Card'
+    name:'Card',
+    data(){
+      return {
+        images:[
+          require('../../asserts/images/right1.webp'),
+          require('../../asserts/images/right2.webp'),
+          require('../../asserts/images/right3.webp'),
+          require('../../asserts/images/right4.webp')
+        ]
+      }
+    }
 }
 </script>
 
