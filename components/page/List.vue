@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/09
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/09
+*  @LastEditTime: 2021/12/10
 -->
 
 
@@ -12,7 +12,7 @@
         <ul>
             <li v-for="article in articles" :key="article.id">
                 <div class="content">
-                    <nuxt-link to="/" target="_blank">
+                    <nuxt-link :to="`/articles/${article.id}}`" target="_blank">
                         <p class="title">{{article.title}}</p>
                         <p class="news">{{article.summary}}</p>
                     </nuxt-link>
@@ -40,7 +40,8 @@ export default {
         return {
             articles:[],
             isLoading:false,
-            ifHaveNews:false
+            ifHaveNews:false,
+            // articleRoute:`/articles/${article.id}`
         }
     },
     async created(){
