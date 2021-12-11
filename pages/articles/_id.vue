@@ -28,7 +28,7 @@
                         <div class="article-content">
                             <div class="markdown">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{content}}</div>
                             <!-- <el-button type="primary" class="btn" >点赞</el-button> -->
-                            <div class="thumbUp"><i class="el-icon-thumb"></i></div>
+                            <div class="thumbUp" @click="thumb" title="点赞"><i class="el-icon-thumb"></i></div>
                         </div>
                     </el-card>
                 </div>
@@ -68,6 +68,20 @@ export default {
         this.viewCount = datas.viewCount;
         this.content = datas.summary;
         this.lastEditTime = datas.updataTime;
+    },
+    methods:{
+        thumb(){
+            let thum = document.getElementsByClassName('thumbUp')[0];
+            if(thum.style.color){
+                document.getElementsByClassName('thumbUp')[0].style.color = null;
+                document.getElementsByClassName('thumbUp')[0].title = "点赞";
+            }else{
+                document.getElementsByClassName('thumbUp')[0].style.color = "#EF6520";
+                document.getElementsByClassName('thumbUp')[0].title = "取消点赞";
+            }
+
+            
+        }
     }
 }
 </script>
@@ -108,26 +122,17 @@ export default {
     cursor: pointer;
 }
 
-/* .article-content .btn{
-    border-radius: 5px;
-} */
-
 .header .tag{
     margin-bottom: 15px;
 }
 
 .thumbUp{
     font-size: 30px;
-    color: #EF6520;
     margin-top: 20px;
 }
 
-/* .thumbUp:hover{
-    cursor: pointer;
-} */
 .article-content i:hover{
     cursor: pointer!important;
-
 }
 
 .markdown{
