@@ -37,12 +37,12 @@
                     <el-card></el-card>
                 </div>
             </el-col>
-            <el-row class="hidden-sm-and-down" :md="6">
+            <el-col class="hidden-sm-and-down" :md="6">
                 <el-card>
                     <div slot="header"></div>
                     <div></div>
                 </el-card>
-            </el-row>
+            </el-col>
         </el-row>
     </div>
 </template>
@@ -103,13 +103,14 @@ export default {
     color: #EF6520;
 }
 
+/* 鼠标放在作者名称上时的样式 */
 .articleInfo i:nth-child(1):hover{
     cursor: pointer;
 }
 
-.article-content .btn{
+/* .article-content .btn{
     border-radius: 5px;
-}
+} */
 
 .header .tag{
     margin-bottom: 15px;
@@ -121,8 +122,12 @@ export default {
     margin-top: 20px;
 }
 
-.thumbUp:hover{
+/* .thumbUp:hover{
     cursor: pointer;
+} */
+.article-content i:hover{
+    cursor: pointer!important;
+
 }
 
 .markdown{
