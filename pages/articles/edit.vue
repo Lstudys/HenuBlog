@@ -32,6 +32,11 @@
                 <el-radio v-model="radio" label="2">仅自己</el-radio>
             </el-form-item>
         </el-form>
+        <div class="mavonEditor">
+            <no-ssr>
+                <mavon-editor :toolbars="markdownOption" v-model="handbook"/>
+            </no-ssr>
+        </div>
     </div>
 </template>
 
@@ -82,6 +87,7 @@ export default {
     /* background-color: blue; */
     width: 80%;
     padding-left: 80px;
+    text-align: left;
 }
 
 .el-cascader{

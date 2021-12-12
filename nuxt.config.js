@@ -21,14 +21,15 @@ export default {
     'element-ui/lib/theme-chalk/index.css',
     '~/asserts/theme/index.css',
     '~/asserts/css/global.css',
-    'element-ui/lib/theme-chalk/display.css'
+    {src:'element-ui/lib/theme-chalk/display.css',ssr:false}
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugin/vuePlugin/test.js',
     '~/plugin/element-plugin.js',
-    '~/plugin/axiosInterceptor.js'
+    '~/plugin/axiosInterceptor.js',
+    '~/plugin/vue-mavon-editor.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
