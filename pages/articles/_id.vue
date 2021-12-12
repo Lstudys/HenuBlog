@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/10
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/10
+*  @LastEditTime: 2021/12/12
 -->
 
 <template>
@@ -37,9 +37,9 @@
                     <el-card></el-card>
                 </div>
             </el-col>
-            <el-col class="hidden-sm-and-down" :md="6">
+            <el-col class="hidden-sm-and-down right-content" :md="6">
                 <el-card>
-                    <div slot="header"></div>
+                    <div slot="header"><el-divider>目录</el-divider></div>
                     <div></div>
                 </el-card>
             </el-col>
@@ -75,9 +75,11 @@ export default {
             if(thum.style.color){
                 document.getElementsByClassName('thumbUp')[0].style.color = null;
                 document.getElementsByClassName('thumbUp')[0].title = "点赞";
+                this.thumbNumber--;
             }else{
                 document.getElementsByClassName('thumbUp')[0].style.color = "#EF6520";
                 document.getElementsByClassName('thumbUp')[0].title = "取消点赞";
+                this.thumbNumber++;
             }
 
             
@@ -141,5 +143,10 @@ export default {
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 1px;
+}
+
+.right-content{
+    position: fixed;
+    right: 25px;
 }
 </style>

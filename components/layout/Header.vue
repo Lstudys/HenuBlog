@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/17
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/03
+*  @LastEditTime: 2021/12/12
 -->
 
 <template>
@@ -25,7 +25,7 @@
                 </el-col>
                 <el-col class="my-login" :span="8" xs="12">
                     <div class="my-login-inner">
-                        <el-button type="text" >后台管理</el-button>
+                        <el-button type="text" >管理</el-button>
                         <el-button v-if="!ifLogin" type="text" @click="$store.dispatch('login')">登录</el-button>
                         <el-button v-if="!ifLogin" type="primary" round @click="register">注册</el-button>
                         <el-dropdown @command="handleCommand">
@@ -33,7 +33,7 @@
                                  <el-avatar icon="el-icon-user-solid" :src="ifLogin ? imageUrl:null"></el-avatar>
                             </div>
                             <el-dropdown-menu slot="dropdown"  >
-                                <el-dropdown-item command="artical">写文章</el-dropdown-item>
+                                <el-dropdown-item command="articles">写文章</el-dropdown-item>
                                 <el-dropdown-item command="question">提问题</el-dropdown-item>
                                 <el-dropdown-item command="user">我的主页</el-dropdown-item>
                                 <el-dropdown-item v-if="ifLogin" command="logout" >退出登录</el-dropdown-item>
@@ -70,8 +70,8 @@ export default {
                return this.$store.dispatch('login');
             }
             switch(command){
-                case 'artical':
-                    let articalRoute = this.$router.resolve('/artical/edit');
+                case 'articles':
+                    let articalRoute = this.$router.resolve('/articles/edit');
                     window.open(articalRoute.href,'_blank');
                     break;
                 case 'question': 
