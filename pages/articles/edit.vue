@@ -27,6 +27,10 @@
                     <img width="100%" :src="dialogImageUrl" alt="">
                 </el-dialog>
             </el-form-item>
+            <el-form-item label="谁可以看">
+                <el-radio v-model="radio" label="1">所有人</el-radio>
+                <el-radio v-model="radio" label="2">仅自己</el-radio>
+            </el-form-item>
         </el-form>
     </div>
 </template>
@@ -57,7 +61,8 @@ export default {
                 }
             ],
             dialogImageUrl:'',
-            dialogVisible:false
+            dialogVisible:false,
+            radio:'1'
         }
     },
     methods:{
