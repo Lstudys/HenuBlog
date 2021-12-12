@@ -82,7 +82,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .wrap{
     /* background-color: blue; */
     width: 80%;
