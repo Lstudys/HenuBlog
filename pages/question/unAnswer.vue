@@ -8,12 +8,15 @@
 
 <template>
     <div class="wrap">
-
+        <QuestionList></QuestionList>
     </div>
 </template>
 
 <script>
+import QuestionList from '../../components/page/QuestionList.vue';
 export default {
-    
+    components:{
+        QuestionList
+    }
 }
 </script>

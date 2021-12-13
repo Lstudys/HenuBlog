@@ -8,12 +8,16 @@
 
 <template>
     <div class="wrap">
-        最新
+        <QuestionList></QuestionList>
     </div>
 </template>
 
 <script>
+import QuestionList from '../../components/page/QuestionList.vue';
 export default {
+    components:{
+        QuestionList
+    },
  mounted(){
      console.log('最新');
  }   

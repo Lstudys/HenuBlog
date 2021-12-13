@@ -9,7 +9,7 @@
 <template>
     <div class="wrap">
         <el-menu :default-active="activeIndex" router class="el-menu-demo" mode="horizontal" @select="handleSelect">
-            <el-menu-item index="/question/">热门</el-menu-item>
+            <el-menu-item index="/question">热门</el-menu-item>
             <el-menu-item index="/question/newAanswer">最新</el-menu-item>
             <el-menu-item index="/question/unAnswer">待回答</el-menu-item>
         </el-menu>
