@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .my-footer{
     padding-top: 60px !important;
     padding-bottom: 50px !important;

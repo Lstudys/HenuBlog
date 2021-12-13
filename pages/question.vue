@@ -8,24 +8,29 @@
 
 <template>
     <div class="wrap">
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-            <el-menu-item index="1">热门</el-menu-item>
-            <el-menu-item index="3">最新</el-menu-item>
-            <el-menu-item index="4">待回答</el-menu-item>
+        <el-menu :default-active="activeIndex" router class="el-menu-demo" mode="horizontal" @select="handleSelect">
+            <el-menu-item index="/question/">热门</el-menu-item>
+            <el-menu-item index="/question/newAanswer">最新</el-menu-item>
+            <el-menu-item index="/question/unAnswer">待回答</el-menu-item>
         </el-menu>
+        <nuxt-child></nuxt-child>
     </div>
 </template>
 
 <script>
 import List from '../components/page/List.vue'
 export default {
+    name:'question',
     components:{
         List
     },
     data(){
         return {
-            activeIndex:'1'
+            activeIndex:''
         }
+    },
+    created(){
+        this.activeIndex = this.$route.path;
     }
 }
 </script>
@@ -38,6 +43,7 @@ export default {
 
 .el-menu{
     /* background-color: blue; */
-    padding-left: 250px;
+    padding-left: 0px;
+    margin-bottom: 20px;
 }
 </style>

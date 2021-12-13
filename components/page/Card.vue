@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/06
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/10
+*  @LastEditTime: 2021/12/13
 -->
 
 <template>
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
@@ -50,5 +50,10 @@ export default {
   
   .el-carousel__item:nth-child(2n+1) {
      background-color: #d3dce6;
+  }
+
+ .el-carousel__item img{
+    height: 250px;
+    width: 100%;
   }
 </style>

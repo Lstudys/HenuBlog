@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .my-main{
     padding-top: 90px;
     max-width: 1140px;

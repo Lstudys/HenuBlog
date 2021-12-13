@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .my-header{
     background-color: #fafafa;
     width: 100%;
