@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/12
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/12
+*  @LastEditTime: 2021/12/14
 -->
 
 <template>
@@ -36,13 +36,9 @@ export default {
 </script>
 
 <style scoped>
-.wrap{
-    /* background-color: blue; */
-    /* padding-left: 300px; */
-}
+
 
 .el-menu{
-    /* background-color: blue; */
     padding-left: 0px;
     margin-bottom: 20px;
 }
