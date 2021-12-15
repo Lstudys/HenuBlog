@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/14
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/14
+*  @LastEditTime: 2021/12/15
 -->
 
 <template>
@@ -14,22 +14,22 @@
             <p :class="{clicked:click2,unClicked:unClick2}" @click="clickbtn2">按访问量</p>
         </div>
         <el-divider></el-divider>
-        <div class="content">
-            <img src="../../asserts/images/background.jpg" alt="">
-            <p>什么也没有</p>
-            <nuxt-link to="/articles/edit" class="edit">写文章</nuxt-link>
-        </div>
+        <NoContent btnText="写文章"></NoContent>
     </div>
 </template>
 
 <script>
+import NoContent from '../../components/page/NoContent.vue';
 export default {
+    components:{
+        NoContent
+    },
     data(){
         return {
             click1:true,
             unClick1:false,
             click2:false,
-            unClick2:true
+            unClick2:true,
         }
     },
     methods:{
@@ -79,32 +79,5 @@ export default {
 
 .header p:nth-child(3){
     margin-right: 10px;
-}
-
-.content{
-    text-align: center;
-}
-
-.content p{
-    font-size: 16px;
-    color: #6b6b6b;
-}
-
-.content .edit{
-    display: block;
-    color: #EF6520;
-    margin-left: 300px;
-    width: 180px;
-    height: 30px;
-    padding-top: 5px;
-    text-align: center;
-    border: 1px solid #EF6520;
-    border-radius: 5px;
-    transition: 0.5s;
-}
-
-.content .edit:hover{
-    color: #fff;
-    background-color: #EF6520;
 }
 </style>
