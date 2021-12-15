@@ -32,6 +32,9 @@
 
 <script>
 export default {
+    head:{
+        title:'提问-河南大学软件学院交流论坛'
+    }
     
 }
 </script>
