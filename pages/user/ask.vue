@@ -8,7 +8,7 @@
 
 <template>
     <div class="wrap">
-        <NoContent btnText="我要提问"></NoContent>
+        <NoContent btnText="我要提问" path="/ask"></NoContent>
     </div>
 </template>
 

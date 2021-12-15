@@ -14,7 +14,7 @@
             <p :class="{clicked:click2,unClicked:unClick2}" @click="clickbtn2">按访问量</p>
         </div>
         <el-divider></el-divider>
-        <NoContent btnText="写文章"></NoContent>
+        <NoContent btnText="写文章" path="/articles/edit"></NoContent>
     </div>
 </template>
 

@@ -10,13 +10,13 @@
     <div class="content">
         <img src="../../asserts/images/background.jpg" alt="">
         <h6>什么也没有</h6>
-        <nuxt-link to="/articles/edit" class="edit">{{btnText}}</nuxt-link>
+        <nuxt-link :to="path" class="edit">{{btnText}}</nuxt-link>
     </div>
 </template>
 
 <script>
 export default {
-    props:['btnText']
+    props:['btnText','path']
 }
 </script>
 
