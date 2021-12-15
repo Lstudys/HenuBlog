@@ -39,6 +39,9 @@
 
 <script>
 export default {
+    head:{
+        title:'个人主页-河南大学软件学院交流论坛'
+    },
     data(){
         return {
             activeIndex:this.$route.path

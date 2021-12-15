@@ -1,9 +1,9 @@
 <!--
-*  @FileDescription: 文章详情页
+*  @FileDescription: 写文章页面
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/10
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/12
+*  @LastEditTime: 2021/12/15
 -->
 
 <template>
@@ -42,6 +42,9 @@
 
 <script>
 export default {
+    head:{
+        title:'写文章-河南大学软件学院交流论坛'
+    },
     data(){
         return {
             form:{

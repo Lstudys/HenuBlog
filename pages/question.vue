@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/12
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/14
+*  @LastEditTime: 2021/12/15
 -->
 
 <template>
@@ -20,6 +20,9 @@
 <script>
 import List from '../components/page/List.vue'
 export default {
+    head:{
+        title:'问答-河南大学软件学院交流论坛'
+    },
     name:'question',
     components:{
         List
