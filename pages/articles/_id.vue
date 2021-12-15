@@ -3,13 +3,13 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/12/10
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/12
+*  @LastEditTime: 2021/12/15
 -->
 
 <template>
     <div class="wrap">
         <el-row>
-            <el-col :md="18" :xs="24" :sm="24">
+            <el-col :md="18" :xs="24" :sm="24" class="left">
                 <div class="article">
                     <el-card>
                         <div class="header">
@@ -32,9 +32,16 @@
                         </div>
                     </el-card>
                 </div>
-                <div>
-                    <h2>评论区</h2>
-                    <el-card></el-card>
+                <div class="comment">
+                    <el-card>
+                        <h6>{{commentNumber}}条评论</h6>
+                        <el-divider></el-divider>
+                        <div class="inputBox">
+                            <img :src="imageUrl" alt="">
+                            <el-input clearable placeholder="撰写评论..." class="input" v-model="comment"></el-input>
+                            <el-button type="primary" :disabled="comment ? false : true">评论</el-button>
+                        </div>
+                    </el-card>
                 </div>
             </el-col>
             <el-col class="hidden-sm-and-down right-content" :md="6">
@@ -56,7 +63,10 @@ export default {
             thumbNumber:0,
             viewCount:0,
             content:'',
-            lastEditTime:''
+            lastEditTime:'',
+            commentNumber:0,
+            imageUrl:require('../../asserts/images/userImage.jpg'),
+            comment:''
         }
     },
     async created(){
@@ -88,7 +98,11 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
+.left{
+    margin-right: 20px;
+}
+
 .el-card{
     margin: 0 15px;
 }
@@ -148,5 +162,30 @@ export default {
 .right-content{
     position: fixed;
     right: 25px;
+}
+
+.comment{
+    margin-top: 20px;
+}
+
+.comment h6{
+    font-size: 16px;
+    color: #6b6b6b;
+    margin-bottom: 0;
+}
+
+.comment img{
+    height: 38px;
+    width: 38px;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.comment .inputBox{
+    display: flex;
+}
+
+.comment .input{
+    margin-right: 8px;
 }
 </style>
