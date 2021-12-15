@@ -10,7 +10,7 @@
     <div class="wrap">
         <el-form ref="form" :model="form" label-width="80px">
             <el-form-item label="标题">
-                <el-input clearable  v-model="form.name"></el-input>
+                <el-input clearable  v-model="form.name" placeholder="输入标题"></el-input>
             </el-form-item>
             <el-form-item label="标签">
                 <el-cascader clearable :props="{multiple:true}" placeholder="输入标签" :options="options" filterable></el-cascader>
@@ -37,6 +37,7 @@
                 <mavon-editor :toolbars="markdownOption" v-model="handbook"/>
             </no-ssr>
         </div>
+       <div style="text-align: center;"><el-button type="primary" class="release">发布</el-button></div>
     </div>
 </template>
 
@@ -101,5 +102,10 @@ export default {
     width: 150px;
     height: 150px;
     /* background-color: blue; */
+}
+
+.release{
+    border-radius: 5px;
+    margin-top: 20px;
 }
 </style>
