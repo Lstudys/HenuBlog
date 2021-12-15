@@ -3,7 +3,7 @@
 *  @Author: 李永晖
 *  @CreatedDate:2021/11/17
 *  @LastEditors: 李永晖
-*  @LastEditTime: 2021/12/14
+*  @LastEditTime: 2021/12/15
 -->
 
 <template>
@@ -20,7 +20,7 @@
                     router>
                         <el-menu-item index="/">首页</el-menu-item>
                         <el-menu-item index="/question">问答</el-menu-item>
-                        <el-menu-item index="/label">消息</el-menu-item>
+                        <el-menu-item index="/message">消息</el-menu-item>
                     </el-menu>
                 </el-col>
                 <el-col class="my-login" :span="8" xs="12">
@@ -75,7 +75,7 @@ export default {
                     window.open(articalRoute.href,'_blank');
                     break;
                 case 'question': 
-                    let questionRoute = this.$router.resolve('/question');
+                    let questionRoute = this.$router.resolve('/ask');
                     window.open(questionRoute.href,'_blank');
                     break;
                 case 'user':
