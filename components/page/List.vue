@@ -51,7 +51,7 @@ export default {
     methods:{
         async loadNews(){
             this.isLoading = true;
-            if(this.articles.length <= 80){
+            if(this.articles.length <= 60){
                 const {data} = await this.$axios.get('https://mock.mengxuegu.com/mock/61925633f126df7bfd5b7a1a/articleList');
                 const {records} = data.data;
                 this.articles = this.articles.concat(records);
