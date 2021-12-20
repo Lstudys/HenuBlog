@@ -16,7 +16,7 @@
                   <h6>内容</h6>
                   <div class="mavonEditor">
                     <no-ssr>
-                        <mavon-editor :toolbars="markdownOption" v-model="handbook"/>
+                        <mavon-editor :toolbars="markdownOption" v-model="handbook" placeholder="你有什么问题..."/>
                     </no-ssr>
                   </div>
               </el-card>

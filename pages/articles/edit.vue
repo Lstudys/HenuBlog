@@ -33,8 +33,8 @@
             </el-form-item>
         </el-form>
         <div class="mavonEditor">
-            <no-ssr>
-                <mavon-editor :toolbars="markdownOption" v-model="handbook"/>
+            <no-ssr>"
+                <mavon-editor :toolbars="markdownOption" v-model="handbook" placeholder="开始..."/>
             </no-ssr>
         </div>
        <div style="text-align: center;"><el-button type="primary" class="release">发布</el-button></div>
